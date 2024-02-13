@@ -18,9 +18,9 @@ Access external links to get an access token and explore the Spotify Developer d
 - React: JavaScript library for building user interfaces.
 - Chakra UI: React component library for building accessible and customizable UI components.
 - Spotify Web API: RESTful API provided by Spotify for accessing Spotify data and controlling playback.
+
 <b>Installation</b>
-Clone the repository to your local machine.
-- Install dependencies using...
+Clone the repository to your local machine. Install dependencies using...
 ```shell
 npm install
 ```

@@ -20,7 +20,7 @@ Access external links to get an access token and explore the Spotify Developer d
 - Spotify Web API: RESTful API provided by Spotify for accessing Spotify data and controlling playback.
 <b>Installation</b>
 Clone the repository to your local machine.
-Install dependencies using...
+- Install dependencies using...
 ```shell
 npm install
 ```

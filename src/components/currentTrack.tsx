@@ -1,5 +1,3 @@
-// src/components/CurrentlyPlaying.tsx
-
 import { Box, Center, Image, Stack, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { getAccessToken } from '../accessToken';
@@ -23,6 +21,14 @@ function CurrentlyPlaying() {
 
         const data = await response.json();
         setTrackData(data.item);
+
+        // Refresh the page if the song has been playing for less than 2 seconds
+        const progressMs = data.progress_ms;
+        if (progressMs < 2000) {
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000 - progressMs); // Adjust timeout to ensure it reloads within 2 seconds
+        }
       } catch (error) {
         setError('Error fetching currently playing track.');
         console.error('Error fetching currently playing track:', error);

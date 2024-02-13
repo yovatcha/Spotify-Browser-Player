@@ -60,6 +60,11 @@ function Navbar() {
                     Spotify Developer Docs
                     </Link>
                 </MenuItem>
+                <MenuItem _hover={{ textDecoration: "none" }}>
+                    <Link href='https://github.com/yovatcha' isExternal>
+                    GITHUB
+                    </Link>
+                </MenuItem>
             </MenuList>
           </Menu>
         ) : (

@@ -7,7 +7,7 @@ import CurrentTrack from './components/currentTrack';
 import Navbar from './components/navbar';
 
 function App() {
-  const [backgroundColor, setBackgroundColor] = useState<string>(''); // State to store background color
+  const [backgroundColor, setBackgroundColor] = useState<string>('');
   const [refreshKey, setRefreshKey] = useState(0); // State to trigger refresh of CurrentTrack component
 
   useEffect(() => {
@@ -16,7 +16,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Generate a random background color whenever refreshKey changes (song changes)
     const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
     setBackgroundColor(randomColor);
   }, [refreshKey]);
@@ -45,7 +44,7 @@ function App() {
     <Flex className="App" direction="column" justify="center" align="center" minHeight="100vh" style={{ backgroundColor }} shadow="md">
       <Box width="80%" bgColor="white" rounded="xl" shadow="xl" p={6}>
         <Stack direction="column" spacing={6} p={4}>
-          <CurrentTrack key={refreshKey} />
+          <CurrentTrack />
           <Buttons />
         </Stack>
       </Box>

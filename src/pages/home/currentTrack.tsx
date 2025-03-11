@@ -1,6 +1,6 @@
 import { Box, Center, Image, Stack, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { getAccessToken } from '../accessToken';
+import { getAccessToken } from '../../accessToken';
 
 function CurrentlyPlaying() {
   const [trackData, setTrackData] = useState<any>(null);
@@ -49,6 +49,11 @@ function CurrentlyPlaying() {
           <Box>
             <Text fontSize="lg" fontWeight="bold">{trackData.name}</Text>
             <Text fontSize="sm" fontWeight={"semibold"} color="gray.500">{trackData.artists.map((artist: { name: string }) => artist.name).join(', ')}</Text>
+          </Box>
+          <Box>
+            <Stack direction={"row"}>
+                <Text>{`${Math.floor(trackData.duration_ms / 60000)}:${String(Math.floor((trackData.duration_ms % 60000) / 1000)).padStart(2, '0')}`}</Text>
+            </Stack>
           </Box>
         </Stack>
       ) : (

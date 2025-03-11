@@ -1,7 +1,7 @@
 import { Button, Center, Stack, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { FaPause, FaPlay, FaStepBackward, FaStepForward } from 'react-icons/fa';
-import { getAccessToken } from '../accessToken';
+import { getAccessToken } from '../../accessToken';
 
 function Buttons() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -86,7 +86,10 @@ function Buttons() {
       }
 
       // Refresh the page to reflect the changes after going to the next track
-      window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+
+        }, 1000);
     } catch (error) {
       setError('Error going to next track.');
       console.error('Error going to next track:', error);
@@ -107,6 +110,8 @@ function Buttons() {
       }
 
       // Refresh the page to reflect the changes after going to the next track
+      window.location.reload();
+
       window.location.reload();
     } catch (error) {
       setError('Error going to next track.');
